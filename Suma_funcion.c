@@ -4,7 +4,7 @@
 
 void suma(int a, int b, int matrizA[a][b], int matrizB[a][b], int matrizR[a][b])
 {
-    for (in i = 0; i < a; i++)
+    for (int i = 0; i < a; i++)
     {
         for (int j = 0; j < b; j++)
         {
@@ -13,21 +13,43 @@ void suma(int a, int b, int matrizA[a][b], int matrizB[a][b], int matrizR[a][b])
     }
 }
 
-
-int main () {
+int main()
+{
 
     int a, b;
+
+    srand(time(NULL));
+
+    printf("Ingrese el valor de las filas: ");
+    scanf("%d", &a);
+
+    printf("Ingrese el valor de las columnas: ");
+    scanf("%d", &b);
+
     int matrizA[a][b];
     int matrizB[a][b];
     int matrizR[a][b];
 
-    srand(time(NULL));
+    printf("MATRIZ A");
+    for (int i = 0; i < a; i++)
+    {
+        printf("\n");
+        for (int j = 0; j < b; j++)
+        {
+            matrizA[i][j] = rand() % 100 + 1;
+            printf("%d \t", matrizA[i][j]);
+        }
+    }
 
-    printf ("Ingrese el valor de las filas: ");
-    scanf ("%d", &a);
-
-    printf ("Ingrese el valor de las columnas: ");
-    scanf ("%d", &b);
-    
+    printf("MATRIZ B");
+    for (int i = 0; i < a; i++)
+    {
+        printf("\n");
+        for (int j = 0; j < b; j++)
+        {
+            matrizB[i][j] = rand() % 100 + 1;
+            printf("%d \t", matrizB[i][j]);
+        }
+    }
     return 0;
 }
