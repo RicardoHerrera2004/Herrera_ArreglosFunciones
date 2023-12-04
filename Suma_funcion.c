@@ -13,6 +13,17 @@ void suma(int a, int b, int matrizA[a][b], int matrizB[a][b], int matrizR[a][b])
     }
 }
 
+void imprimir(int a, int b, int matrizR[a][b]) {
+    for (int i = 0; i < a; i++)
+    {
+        printf ("\n");
+        for (int j = 0; j < b; j++)
+        {
+            printf ("%d \t", matrizR[i][j]);
+        }
+    }
+}
+
 int main()
 {
 
@@ -40,7 +51,7 @@ int main()
             printf("%d \t", matrizA[i][j]);
         }
     }
-
+    printf ("\n");
     printf("MATRIZ B");
     for (int i = 0; i < a; i++)
     {
@@ -51,5 +62,11 @@ int main()
             printf("%d \t", matrizB[i][j]);
         }
     }
+    
+    printf ("\n");
+    printf("MATRIZ RESULTANTE");
+    suma(a, b, matrizA, matrizB, matrizR);
+    imprimir(a, b, matrizR);
+       
     return 0;
 }
